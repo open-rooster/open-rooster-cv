@@ -1,12 +1,12 @@
 # Implementer Guide
 
-This guide explains how applicant tracking systems, job boards, resume builders, employers, and job seekers can adopt `resume.cv.open/0.1` without requiring a complete rewrite of current hiring workflows.
+This guide explains how applicant tracking systems, job boards, resume builders, employers, and job seekers can adopt `open.rooster.cv/0.1` without requiring a complete rewrite of current hiring workflows.
 
 ## For Applicant Tracking Systems
 ATS platforms should accept the JSON payload alongside existing file uploads. The first useful integration is an import endpoint or upload control that validates the payload, stores the original JSON, and maps known fields into the ATS candidate profile.
 
 Recommended behavior:
-- Validate the payload against `schema/resume-cv-open-v0.1.schema.json`.
+- Validate the payload against `schema/open-rooster-cv-v0.1.schema.json`.
 - Preserve the original payload for audit, correction, and reprocessing.
 - Render a human-readable resume view for recruiters and hiring managers.
 - Mark applicant-provided, inferred, and verified data distinctly when provenance is available.
@@ -40,7 +40,7 @@ Recommended behavior:
 Job boards should avoid making a profile appear verified unless the data came from a credential issuer, prior employer, or equivalent trusted source.
 
 ## For Resume Builders
-Resume builders are the easiest first adoption point because they already collect structured data before rendering a PDF. A builder can export `resume.cv.open/0.1` directly and optionally render the same data into HTML, PDF, or plain text.
+Resume builders are the easiest first adoption point because they already collect structured data before rendering a PDF. A builder can export `open.rooster.cv/0.1` directly and optionally render the same data into HTML, PDF, or plain text.
 
 Recommended behavior:
 - Store resume sections in schema-compatible structures.

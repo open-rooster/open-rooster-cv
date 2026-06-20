@@ -1,6 +1,6 @@
 {
   "protocol": {
-    "name": "resume.cv.open",
+    "name": "open.rooster.cv",
     "version": "0.1"
   },
   "profile": {
@@ -292,6 +292,6 @@
     "updatedAt": "2026-05-28T22:40:00Z",
     "language": "en-US",
     "sourceSystem": "Example Resume Builder",
-    "schemaUrl": "https://resume.cv.open/schemas/resume-cv-open-v0.1.schema.json"
+    "schemaUrl": "https://open.rooster.cv/schemas/open-rooster-cv-v0.1.schema.json"
   }
 }

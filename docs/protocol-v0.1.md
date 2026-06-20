@@ -1,9 +1,9 @@
-# Open Resume/CV JSON Protocol v0.1
+# Open Rooster CV Protocol v0.1
 
 ## Status
 This is a draft conceptual specification for an open, vendor-neutral JSON protocol for resume and CV exchange. It is intentionally small enough for resume builders, job boards, applicant tracking systems, and employer HR systems to implement without replacing their existing workflows.
 
-The protocol name for this draft is `resume.cv.open/0.1`.
+The protocol name for this draft is `open.rooster.cv/0.1`.
 
 ## Purpose
 The protocol replaces brittle PDF and Word parsing with structured career data supplied directly by the job seeker or an authorized profile system. A conforming payload can be validated as JSON, rendered for human review, and imported into HR systems without guessing which text represents employers, dates, credentials, skills, or consent terms.
@@ -24,7 +24,7 @@ Every v0.1 payload is a JSON object with these top-level sections:
 ```json
 {
   "protocol": {
-    "name": "resume.cv.open",
+    "name": "open.rooster.cv",
     "version": "0.1"
   },
   "profile": {},
@@ -252,7 +252,7 @@ Example:
 ```json
 {
   "protocol": {
-    "name": "resume.cv.open",
+    "name": "open.rooster.cv",
     "version": "0.1",
     "extensions": ["academic.cv/0.1"]
   },
@@ -281,7 +281,7 @@ Implementers may ignore unknown optional fields if they preserve the original pa
 ```mermaid
 flowchart LR
   JobSeeker["Job Seeker"] -->|"exports profile"| ResumeBuilder["Resume Builder"]
-  ResumeBuilder -->|"validates against JSON Schema"| Payload["resume.cv.open/0.1 Payload"]
+  ResumeBuilder -->|"validates against JSON Schema"| Payload["open.rooster.cv/0.1 Payload"]
   Payload -->|"submits with consent"| ATS["ATS or HR System"]
   ATS -->|"renders profile"| Reviewer["Recruiter or Hiring Manager"]
   ATS -->|"stores according to consent"| Records["HR Records"]

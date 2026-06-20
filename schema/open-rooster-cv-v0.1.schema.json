@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://resume.cv.open/schemas/resume-cv-open-v0.1.schema.json",
-  "title": "Open Resume/CV JSON Protocol v0.1",
+  "$id": "https://open.rooster.cv/schemas/open-rooster-cv-v0.1.schema.json",
+  "title": "Open Rooster CV Protocol v0.1",
   "description": "Draft schema for a vendor-neutral JSON resume and CV exchange payload.",
   "type": "object",
   "additionalProperties": false,
@@ -38,7 +38,7 @@
       "required": ["name", "version"],
       "properties": {
         "name": {
-          "const": "resume.cv.open"
+          "const": "open.rooster.cv"
         },
         "version": {
           "const": "0.1"
