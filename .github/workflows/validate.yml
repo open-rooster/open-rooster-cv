@@ -1,0 +1,30 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this standard
+        uses: actions/checkout@v4
+
+      - name: Check out open-rooster-common (drift guard)
+        uses: actions/checkout@v4
+        with:
+          repository: open-rooster/open-rooster-common
+          path: .open-rooster-common
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+
+      - name: Validate examples + conformance
+        run: npm test
+
+      - name: Drift check against open-rooster-common
+        run: node .open-rooster-common/check-drift.mjs schemas/open-rooster-cv-v0.1.schema.json

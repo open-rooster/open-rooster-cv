@@ -1,0 +1,22 @@
+{
+  "name": "open-rooster-cv",
+  "version": "0.1.0",
+  "description": "open.rooster.cv/0.1 — a vendor-neutral open JSON standard for résumés and CVs. Portable, consent-aware, provenance-aware career data.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/open-rooster/open-rooster-cv",
+  "repository": { "type": "git", "url": "https://github.com/open-rooster/open-rooster-cv.git" },
+  "keywords": ["resume", "cv", "hiring", "open-standard", "json-schema", "recruitment", "open-rooster"],
+  "files": ["schemas", "types", "examples", "guides", "validate.mjs", "SPEC.md"],
+  "exports": {
+    "./schema": "./schemas/open-rooster-cv-v0.1.schema.json"
+  },
+  "scripts": {
+    "validate": "node validate.mjs",
+    "test": "node test.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
